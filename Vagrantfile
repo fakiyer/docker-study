@@ -65,13 +65,13 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    yum -y install net-tools
-    yum -y update
-    systemctl stop firewalld.service
-    systemctl mask firewalld.service
-    yum -y install docker
-    systemctl enable docker.service
-    systemctl start docker.service
-    docker pull -a enakai00/centos
+    sudo yum -y install net-tools
+    sudo yum -y update
+    sudo systemctl stop firewalld.service
+    sudo systemctl mask firewalld.service
+    sudo yum -y install docker
+    sudo systemctl enable docker.service
+    sudo systemctl start docker.service
+    sudo docker pull -a enakai00/centos
   SHELL
 end
